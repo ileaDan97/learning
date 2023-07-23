@@ -1,0 +1,5 @@
+baseTest\BaseTest.class
+helpers\WebDriverTest.class
+steps\ExempluSteps.class
+hooks\Hooks.class
+pages\ExempluPage.class
