@@ -1,11 +1,11 @@
 package helpers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.time.Duration;
 
 
 public class WebDriverTest {
@@ -24,6 +24,7 @@ public class WebDriverTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(option);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     public static void closeBrowser() {

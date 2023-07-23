@@ -7,6 +7,7 @@ import pages.BMW_HomePage;
 import pages.TrivagoPage;
 
 
+
 public class BaseTest {
 
     public BaseTest() {
