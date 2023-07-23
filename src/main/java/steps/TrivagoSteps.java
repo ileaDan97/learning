@@ -23,7 +23,11 @@ public class TrivagoSteps extends BaseTest {
     }
     @And("^Select a day from calendar")
     public void SelectDateFromCalendar(){
-
+        trivagoPage.SelectDateFromCalendar();
+    }
+    @And("^Click on apply button")
+    public void clickOnApplyButton(){
+        trivagoPage.clickOnApplyButton();
     }
 
 }
