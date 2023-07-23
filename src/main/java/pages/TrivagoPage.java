@@ -47,6 +47,6 @@ public class TrivagoPage {
         Assert.assertTrue("The city is not ROME", checkCity.isDisplayed());
     }
     public void SelectDateFromCalendar(){
-
+       // asdas
     }
 }
