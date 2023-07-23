@@ -6,3 +6,4 @@ Feature: Navigate to website
     And Click on search filed
     And Search for a city and check if the city was selected
     And Select a day from calendar
+    And Click on apply button
