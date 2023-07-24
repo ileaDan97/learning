@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -27,6 +28,12 @@ public class TrivagoPage {
     private List<WebElement> calendarDays;
     @FindBy(css = "button[data-testid='guest-selector-apply']")
     private WebElement applyButton;
+    @FindBy(css = "button[data-testid=children-amount-plus-button]")
+    private WebElement plusButtonForChildren;
+    @FindBy(css = "select[class='appearance-none h-10 border pl-4 pr-10 bg-no-repeat bg-right rounded-sm border-grey-300 bg-white']")
+    private WebElement child1AgeList;
+    @FindBy(css = "select[id=childrens-age16]")
+    private WebElement child2AgeList;
 
     public void navigateToTrivagoPage() {
         driver.get("https://www.trivago.com/");
@@ -56,14 +63,31 @@ public class TrivagoPage {
         while (!calendarMonth.getText().contains("March 2024")) {
             calendarNextButton.click();
         }
-        for (int i = 0; i <calendarDays.size() ; i++) {
+        for (int i = 0; i < calendarDays.size(); i++) {
             String text = calendarDays.get(i).getText();
-            if(text.equalsIgnoreCase("14")){
+            if (text.equalsIgnoreCase("14")) {
                 calendarDays.get(i).click();
             }
         }
     }
-    public void clickOnApplyButton(){
+
+    public void select2ChildrenFromOptionGuestAndRooms() {
+        for (int i = 0; i < 2; i++) {
+            plusButtonForChildren.click();
+        }
+    }
+
+    public void selectChildAge() {
+        WebElement ddown = child1AgeList;
+        Select select = new Select(ddown);
+        select.selectByValue("9");
+
+        WebElement ddown2 = child2AgeList;
+        Select select2 = new Select(ddown2);
+        select2.selectByValue("11");
+    }
+
+    public void clickOnApplyButton() {
         applyButton.click();
     }
 }
