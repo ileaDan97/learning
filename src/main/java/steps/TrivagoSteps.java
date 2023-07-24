@@ -25,6 +25,14 @@ public class TrivagoSteps extends BaseTest {
     public void SelectDateFromCalendar(){
         trivagoPage.SelectDateFromCalendar();
     }
+    @And("^Select 2 children from guest and room option")
+    public void select2ChildrenFromOptionGuestAndRooms(){
+        trivagoPage.select2ChildrenFromOptionGuestAndRooms();
+    }
+    @And("^Select age for the children")
+    public void selectChildAge(){
+        trivagoPage.selectChildAge();
+    }
     @And("^Click on apply button")
     public void clickOnApplyButton(){
         trivagoPage.clickOnApplyButton();
